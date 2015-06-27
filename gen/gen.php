@@ -1,8 +1,17 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once '../sc_credentials.php';
+require_once '../Services/Soundcloud.php';
 
+$url = 'http://api.soundcloud.com/tracks.json?';
+
+$client = new Services_Soundcloud(
+    'CLIENT_ID',
+    'CLIENT_SECRET'
+);
+
+$tracks = $client->get($url, array('q' => 'buskers', 'license' => 'cc-by-sa'));
+
+echo '<pre>';
+print_r($tracks);
+echo '</pre>';
