@@ -1,5 +1,5 @@
 <?php
-require_once '../credentials.php';
+require_once 'credentials.php';
 require_once '../Services/Soundcloud.php';
 
 // create a client object with your app credentials
