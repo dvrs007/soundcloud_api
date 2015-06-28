@@ -1,17 +1,32 @@
-<?php
+<!doctype html>
+<html>
+	<head>
 
-require_once '../sc_credentials.php';
-require_once '../Services/Soundcloud.php';
+		<meta charset="UTF-8"/>
+		<title></title>
 
-$url = 'http://api.soundcloud.com/tracks.json?';
+		<link rel="stylesheet" src="" />
+		<script type="text-javascript" src=""></script>
 
-$client = new Services_Soundcloud(
-    'CLIENT_ID',
-    'CLIENT_SECRET'
-);
+	</head>
+	<body>
 
-$tracks = $client->get($url, array('q' => 'buskers', 'license' => 'cc-by-sa'));
+	<form method="post" action=".">
 
-echo '<pre>';
-print_r($tracks);
-echo '</pre>';
+		<input type="text" name="search" />
+		<input type="submit" name="submit" />
+
+	</form>
+
+	<?php 
+
+		foreach ($tracks_array as $t) {
+			
+			echo '<p>' . $t->title . '</p>';
+
+		}
+
+	?>
+
+	</body>
+</html>
