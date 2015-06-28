@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 	$results = $client->get($url, array(
 		'q' => $query,
 		//'order' => 'created_at', 
-		'limit' => '10'
+		'limit' => '5'
 	));
 
 	$results_array = json_decode($results);
