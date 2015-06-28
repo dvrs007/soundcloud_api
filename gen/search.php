@@ -20,9 +20,13 @@
 
 	<?php 
 
-		foreach ($tracks_array as $t) {
+		foreach ($results_array as $r) {
 			
-			echo '<p>' . $t->title . '</p>';
+			echo '<p>User: ' . $r->user->username . '</p>';
+			echo '<p>Track Title: ' . $r->title . '</p>';
+			echo '<p>Date Created: ' . $r->created_at . '</p>';
+			echo '<p>Genre: ' . $r->genre . '</p>';
+			echo '<p>Tags: ' . $r->tag_list . '</p><hr>';
 
 		}
 

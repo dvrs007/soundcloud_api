@@ -8,23 +8,28 @@ $client = new Services_Soundcloud(
     'CLIENT_SECRET'
 );
 
-$tracks='';
-$tracks_array=[];
+$query='';
+$results_array=[];
 
 if(isset($_POST['submit'])){
 
-	$genre = $_POST['search'];
+	$query = $_POST['search'];
 
-	$url = 'http://api.soundcloud.com/tracks.json?q=';
+	$url = 'http://api.soundcloud.com/tracks';
 
-	$tracks = $client->get($url, array('genre' => $genre, 'license' => 'cc-by-sa', 'limit' => '5'));
+	//find sounds with query keyword
+	$results = $client->get($url, array(
+		'q' => $query,
+		//'order' => 'created_at', 
+		'limit' => '10'
+	));
 
-	$tracks_array = json_decode($tracks);
+	$results_array = json_decode($results);
 
 	// echo '<pre>';
-	// print_r($tracks_array);
+	// print_r($results_array);
 	// echo '</pre>'; 
 
 }
 
-include 'gen.php';
+include 'search.php';
