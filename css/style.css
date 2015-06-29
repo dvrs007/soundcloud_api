@@ -7,9 +7,23 @@ body {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
+p {
+	margin: 20px 0;
+	line-height: 24px;
+}
+
+.hr {
+	border-bottom: 3px solid #f50;
+	width: 100px;
+}
+
 .container {
 	width:80%;
 	margin: 100px auto;
+}
+
+.demo {
+	margin: 30px 0px;
 }
 
 #navbar {
