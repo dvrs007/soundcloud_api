@@ -1,26 +1,30 @@
 <h1>Searching SoundCloud for Sounds</h1>
+<div class="hr"></div>
 
-<form method="post" action=".">
+<div class="demo">
+	<form method="post" action=".">
 
-	<label for="search">Enter your search keyword:</label>
-	<input type="text" name="search" />
-	<input type="submit" name="submit" />
+		<label for="search">Enter your search keyword:</label>
+		<input type="text" name="search" />
+		<input type="submit" name="submit" />
 
-</form>
+	</form>
 
-<?php 
+	<?php 
 
-	foreach ($results_array as $r) {
-		
-		echo '<p>User: ' . $r->user->username . '</p>';
-		echo '<p>Track Title: ' . $r->title . '</p>';
-		echo '<p>Date Created: ' . $r->created_at . '</p>';
-		echo '<p>Genre: ' . $r->genre . '</p>';
-		echo '<p>Tags: ' . $r->tag_list . '</p><hr>';
+		foreach ($results_array as $r) {
+			
+			echo '<p>User: ' . $r->user->username . '</p>';
+			echo '<p>Track Title: ' . $r->title . '</p>';
+			echo '<p>Date Created: ' . $r->created_at . '</p>';
+			echo '<p>Genre: ' . $r->genre . '</p>';
+			echo '<p>Tags: ' . $r->tag_list . '</p><hr>';
 
-	}
+		}
 
-?>
+	?>
+
+</div>
 
 <h2>Introduction</h2>
 <p>Resources such as sounds, users, sets and groups can be searched using the SoundCloud API. This tutorial will show you how to build a application which returns results based on the user's search entry. For more information about SoundCloud search, see the official documentation <a href="https://developers.soundcloud.com/docs/api/guide#search" target="_blank">here</a>.</p>
