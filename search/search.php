@@ -34,7 +34,7 @@
 <ul>
 	<li>PHP 5 or higher</li>
 	<li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API wrapper</a></li>
-	<li>Register Your Application</li>
+	<li><a href="../index.php">Register Your Application</a></li>
 </ul>
 
 <h2>2. Create a client object</h2>
