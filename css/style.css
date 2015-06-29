@@ -36,6 +36,25 @@ p {
 
 /* Main Navigation */
 
+.home-btn a {
+	color: #444;
+	padding: 10px 15px;
+	margin: 10px;
+	float: left;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: #fff;
+	clear: both;
+}
+
+.home-btn a:hover {
+	background-color: #eee;
+}
+
+.fa.fa-home {
+	  font-size: 1.15em;
+}
+
 .sc-link a {
 	background-color: #f50;
 	color: #fff;
@@ -54,11 +73,12 @@ nav ul {
 	list-style: none;
 	float: right;
 	margin: 0;
+	padding-left: 0;
 }
 
 nav li {
 	display: inline;
-	font-size: 1.15em;
+	font-size: 1em;
 	line-height: 60px;
   	font-weight: 100;
   	margin-right: 10px;
@@ -113,5 +133,4 @@ div.secondary ul {
 	background-color: transparent;
 	color: #444;
 	margin: 0;
-	font-size: 0.75em;
 }

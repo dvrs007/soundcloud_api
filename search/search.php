@@ -113,5 +113,3 @@
 
 <h2>7. Voilà!</h2>
 <p>Your application should now be up and running.</p>
-
-<?php include '../views/footer.php' ?>
