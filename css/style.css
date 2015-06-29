@@ -1,5 +1,103 @@
-.code-block {
+html,
+body {
+	padding:0px!important;
+	margin:0px!important;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+.container {
+	width:80%;
+	margin: 100px auto;
+}
+
+#navbar {
+	height: 60px;
+	width: 100%;
+	position: fixed;
+	top:0;
+	background-color: transparent;
+}
+
+/* Main Navigation */
+
+.sc-link a {
+	background-color: #f50;
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+li.tutorials {
+	background-color: #4c2f5f;
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+	margin: 0;
+}
+
+nav li {
+	display: inline;
+	font-size: 1.15em;
+	line-height: 60px;
+  	font-weight: 100;
+  	margin-right: 10px;
+}
+
+nav li a {
+	text-decoration: none;
+}
+
+/* Secondary Nav */
+
+nav ul li.tutorials:hover div.secondary, 
+div.secondary li:hover {
+	display: block;
+}
+
+div.secondary {
+	position: absolute;
+	margin: 0;
+	border-radius: 4px;
+	padding: 0;
+	font-size: 1em;
+	background-color: transparent;
+	margin-top: -10px;
+	display: none;
+}
+
+div.secondary ul {
+	padding-left: 0;
 	border: 1px solid #ddd;
-	padding: 20px;
-	border-radius: 3px;
+	margin-top: 10px;
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+.secondary li {
+	display: block;
+	margin-right: 0;
+	border-top: 1px solid #ddd;;
+}
+
+.secondary li:first-child {
+	border-top: none;
+}
+
+.secondary li:hover {
+	background-color: #eee;
+}
+
+.secondary li a {
+	padding: 10px;
+	background-color: transparent;
+	color: #444;
+	margin: 0;
+	font-size: 0.75em;
 }
