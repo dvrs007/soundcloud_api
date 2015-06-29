@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 
-require_once 'Services/Soundcloud.php';
+require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
-
+include '../views/header.php';
 //Ref: https://github.com/mptre/php-soundcloud/wiki/OAuth-2
 
 // create a client object with your app credentials
@@ -48,23 +47,21 @@ try {
     exit($e->getMessage());
 }
 
-
+/*
 try {
     $me = json_decode($sc_connection->get('me'), true);
-	//print_r($me);
-	//echo '<br/> ID:' . $me['id'];
-	
-	
-	//echo '<br/> My Tracks <br/>';
-	//$tracks = json_decode($sc_connection->get('tracks',array('user_id' => $me['id'])), true);
-	//print_r($tracks);
+	print_r($me);
+	echo '<br/> ID:' . $me['id'];
+		
+	echo '<br/> My Tracks <br/>';
+	$tracks = json_decode($sc_connection->get('tracks',array('user_id' => $me['id'])), true);
+	print_r($tracks);
 	
 	
 } catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
     exit($e->getMessage());
-}
+}*/
 
-/*
 try{
 	
 	$track= $sc_connection->post('tracks', array(
@@ -78,7 +75,7 @@ try{
 	echo $e->getMessage();
 }
 
-*/
+
 
 echo '</pre>';
 
