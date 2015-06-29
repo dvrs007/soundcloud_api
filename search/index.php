@@ -1,5 +1,6 @@
 <?php
 
+include '../views/header.php';
 require_once '../sc_credentials.php';
 require_once '../Services/Soundcloud.php';
 
