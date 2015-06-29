@@ -27,7 +27,12 @@ if (empty($_SESSION["username"]))
 			// make an authenticated call
 			$current_user = json_decode($client->get('me'));
 			$username = $current_user->username;
+
+			echo 'User Name: ';
 			print $current_user->username;
+			echo '<br />';
+			echo 'User Token: ';
+			print $access['access_token'];
 
 			//set name in session for later
 			$_SESSION["username"] = $username;
@@ -68,5 +73,9 @@ else //second, if user wishes to continue to use application, load saved info to
 
 	//make an authenticated call
 	$current_user = json_decode($clientCheck->get('me'));
+	echo 'User Name Still Alive: '; 
 	print $current_user->username;
+	echo '<br />';
+	echo 'User Token Still Alive: ';
+	print $userCredentials['accesstoken'];
 }
