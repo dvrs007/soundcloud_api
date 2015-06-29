@@ -26,6 +26,9 @@
     <header> 
         <div id="navbar">
             <nav>
+            	<div class="home-btn">
+					<a href="../index.php"><i class="fa fa-home"></i></a>
+				</div>
             	<ul>
 	                <li class="tutorials"><i class="fa fa-caret-down"></i> API Tutorials
 	                	<div class="secondary">
