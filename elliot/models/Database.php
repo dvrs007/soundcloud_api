@@ -1,6 +1,7 @@
 <?php
 
 class Database {
+    
     private static $dsn = 'mysql:host=localhost;dbname=bowjia5_soundcloud';
     private static $dbUser= 'bowjia5_eg';
     private static $dbPwd = 'M5-sabugor';
