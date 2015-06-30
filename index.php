@@ -22,7 +22,7 @@ You need to enter "Title", "Website", and "Redirect URI" of your app. Please kee
 
 <h1>Examples</h1>
 <ul>
-    <li><a href=""><h2>Search with php</h2></a></li>
+    <li><a href="phil/phil.php"><h2>Search with php</h2></a></li>
     <li><a href="upload/"><h2>Upload with php</h2></a></li>
     <li><a href=""><h2>Streaming with JavaScript</h2></a></li>
     <li><a href=""><h2>the play track widget</h2></a></li>
