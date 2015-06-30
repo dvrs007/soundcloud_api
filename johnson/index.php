@@ -1,14 +1,18 @@
 <?php
-require_once 'credentials.php';
-require_once '../Services/Soundcloud.php';
 
-// create a client object with your app credentials
-$client = new Services_Soundcloud($clientID, $clientSecret);
-$client->setCurlOptions(array(CURLOPT_FOLLOWLOCATION => 1));
+require_once 'Services/Soundcloud.php';
+require_once 'sc_credentials.php';
+include '../views/header.php';
 
-// get a tracks oembed data
-$track_url = 'http://soundcloud.com/forss/flickermood';
-$embed_info = json_decode($client->get('oembed', array('url' => $track_url)));
 
-// render the html for the player widget
-print $embed_info->html;
+// create client object with app credentials
+$client = new Services_Soundcloud(
+  $clientID, $clientSecret, 'http://johnsonta.ca/soundcloud/play_widget.php');
+
+//Generate a URL used for authorization and prompt your user to visit your newly generated URL
+$authURL= $client->getAuthorizeUrl();
+
+
+echo '<a href="' . $authURL . '">Connect to SoundCloud</a>';
+
+echo '<pre>';
