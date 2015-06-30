@@ -63,6 +63,7 @@ try {
 } catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
     //this will catch an error and show the details of the error.
     //exit($e->getMessage());
+    exit();
 }
 
 

@@ -142,3 +142,10 @@ div.secondary ul {
 	color: #444;
 	margin: 0;
 }
+
+//Jeesoo added the following on June 30, 2015
+.code_block{
+    margin: 0 auto;
+    border: thin #ddd;
+    background-color: #eee;    
+}
