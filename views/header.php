@@ -35,8 +35,8 @@
 	                		<ul>
 		                		<li><a href="../soundcloud_api/search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
 		                		<li><a href="../soundcloud_api/upload/" title="Upload Tutorial">Upload your sound</a></li>
-		                		<li><a href="#" title="">Lorem Ipsum</a></li>
-		                		<li><a href="#" title="">Lorem Ipsum</a></li>
+		                		<li><a href="../soundcloud_api/Stream/" title="">Stream Tutorial</a></li>
+		                		<li><a href="#" title="">Track Widget Tutorial</a></li>
 	                		</ul>
 	                	</div>
 	                </li>
