@@ -12,10 +12,13 @@ include 'views/header.php';
     Also, for the uploaded and shared sound, visitors and friends can make a comment.<br/>
 </p>
 
+<h1>Create an Account</h1>
+<p>In order to register your App, you need an account with Soundclolud. Please go to the signup page by clicking <a href="https://soundcloud.com/signup">here</a>.</p>
+
 <h1>Registering for an Application</h1>
 <div class="hr"></div>
-<p>(1)  How to set up an account<br/>
-(2) How to register for the keys and tokens</p>
+<p>Please go to the page to register for the keys and tokens by clicking <a href=" http://soundcloud.com/you/apps/new ">here</a>.
+You need to enter "Title", "Website", and "Redirect URI" of your app. Please keep "Client ID" and "Client Secret" in a separate file, e.g. "sc_credentials.php", to include later in your app.
 
 <h1>Examples</h1>
 <ul>
