@@ -7,6 +7,8 @@ session_start();
 require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
+include '../views/header.php';
+
 // create a client object with your app credentials
 // Developer's ID, i.e. developer = client
 // this is the developer's object
@@ -74,3 +76,5 @@ $user_data = array(
 );
 //Finally, the http wil be headed to the location, uploadAudio.php with the access token from the user data.
 header("Location:upload.php?access_token=" . $user_data['access_token']);
+
+include '../views/footer.php';

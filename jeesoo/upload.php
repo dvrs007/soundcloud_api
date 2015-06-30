@@ -3,7 +3,7 @@ session_start();
 require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
-
+include '../views/header.php';
 
 // create a client object with your app credentials
 $sc_connection = new Services_Soundcloud(
@@ -43,11 +43,11 @@ if($_GET['access_token']){
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sound Cloud API-Upload your AUDIO/SOUND</title>
-</head>
+</head-->
 
 <body>
 
@@ -65,8 +65,8 @@ if($_GET['access_token']){
   <input type="submit" />
 </form>
 
-</body>
-</html>
+<!--/body>
+</html-->
 
 
 <?php
@@ -74,4 +74,7 @@ if($_GET['access_token']){
 else{
  header("Location:http://soundcloudapi.philipjamesdevries.com/jeesoo/");
 }
+
+
+include '../views/footer.php';
 ?>   
