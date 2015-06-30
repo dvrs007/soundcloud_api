@@ -2,7 +2,6 @@
 
 require_once 'Services/Soundcloud.php';
 require_once 'sc_credentials.php';
-include '../views/header.php';
 
 
 // create client object with app credentials
@@ -16,3 +15,4 @@ $authURL= $client->getAuthorizeUrl();
 echo '<a href="' . $authURL . '">Connect to SoundCloud</a>';
 
 echo '<pre>';
+
