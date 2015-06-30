@@ -1,5 +1,5 @@
 <?php
-require_once '../Services/Soundcloud.php';
+require_once 'Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
 // create a client object with your app credentials
@@ -9,6 +9,25 @@ $client->setCurlOptions(array(CURLOPT_FOLLOWLOCATION => 1));
 // get a tracks oembed data
 $track_url = 'http://soundcloud.com/forss/flickermood';
 
+
+try {
+	if(!isset($_SESSION['token'])){
+		$accessToken = $client->accessToken($_GET['code'],array(),array(
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_SSL_VERIFYHOST => false,
+			));
+		$_SESSION['token']=$accessToken['access_token'];
+		
+	}
+	else
+	{
+		$client->setAccessToken($_SESSION['token']);
+	}
+	
+	
+} catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
+    exit($e->getMessage());
+}
 
 
 try {
