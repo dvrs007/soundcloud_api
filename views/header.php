@@ -5,8 +5,8 @@
         <title>Soundcloud API Tutorials</title>
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="/soundcloud_api/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="/soundcloud_api/css/styles/atelier-cave.light.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/styles/atelier-cave.light.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <!-- jQuery -->
