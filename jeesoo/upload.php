@@ -3,6 +3,8 @@ session_start();
 require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
+
+
 // create a client object with your app credentials
 $sc_connection = new Services_Soundcloud(
 	CLIENT_ID, 
@@ -32,7 +34,7 @@ if($_POST){
      );
  
   $track = json_decode($sc_connection->post('tracks', $mytrack));
-  echo '<p><b>File successfully uploaded to <a href="'.$track->permalink_url.'" target="_blank" >'.$track->permalink_url.'</a>';
+  echo '<p><b>File successfully uploaded to <a href="'.$track->permalink_url.'" target="_blank" >'.$track->permalink_url.'</a></b>';
 }
 else 
 if($_GET['access_token']){

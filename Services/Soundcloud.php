@@ -916,6 +916,7 @@ class Services_Soundcloud
             );
         }
 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);//added by Jeesoo  on June29
         curl_setopt_array($ch, $options);
 
         $data = curl_exec($ch);

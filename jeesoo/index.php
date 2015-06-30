@@ -4,6 +4,8 @@ require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
 // create a client object with your app credentials
+// Developer's ID, i.e. developer = client
+// this is the developer's object
 $sc_connection = new Services_Soundcloud(
 	CLIENT_ID, 
 	CLIENT_SECRET, 
@@ -12,9 +14,10 @@ $sc_connection = new Services_Soundcloud(
 $sc_connection->setDevelopment(false);
 
 //Generate a URL used for authorization and prompt your user to visit your newly generated URL
+//developer's object will create URL for authorizing users.
 $authURL= $sc_connection->getAuthorizeUrl();
 
-
+// When a user clicks this link, the access token for the user will be given to the user.
 echo '<a href="' . $authURL . '">Connect to SoundCloud</a>';
 
 try {
