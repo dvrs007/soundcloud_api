@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php-soundcloud-master/Services/Soundcloud.php';
+require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
 // create a client object with your app credentials
@@ -44,7 +44,7 @@ if($_GET['access_token']){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sound Cloud API</title>
+<title>Sound Cloud API-Upload your AUDIO/SOUND</title>
 </head>
 
 <body>
@@ -73,6 +73,6 @@ if($_GET['access_token']){
 <?php
 }
 else{
- header("Location:http://ijeesoo.com/WebTrends/SoundCloud/");
+ header("Location:http://soundcloudapi.philipjamesdevries.com/jeesoo/");
 }
 ?>   

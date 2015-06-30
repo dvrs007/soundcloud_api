@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php-soundcloud-master/Services/Soundcloud.php';
+require_once '../Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
 // create a client object with your app credentials
