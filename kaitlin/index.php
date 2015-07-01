@@ -12,18 +12,41 @@
         <!-- jQuery -->
         <script src="/soundcloud_api/js/jquery-2.1.4.js"></script>
 
-        <!-- SoundCloud API -->
-        <script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
-        <script src="/soundcloud_api/js/gen_script.js"></script>
 
-        <!-- Script Highlighting -->
-        <script src="/soundcloud_api/js/highlight.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
 
-    </head>
+
+
+    
+<script src="//connect.soundcloud.com/sdk.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+        <script>
+  SC.initialize({
+    client_id: "78dd9e3098e27384c19f53b320d994bc"
+  });
+    $(document).ready(function() {
+
+SC.stream('/tracks/293', function(sound) {
+  $('#play').click(function(e) {
+    e.preventDefault();
+    sound.start();
+  });
+  $('#stop').click(function(e) {
+    e.preventDefault();
+    sound.stop();
+  }); 
+});
+});
+    
+   
+    
+</script>
+        </head>
     <body>
 
-    <header> 
+ <header> 
         <div id="navbar">
             <nav>
             	<div class="home-btn">
@@ -35,8 +58,8 @@
 	                		<ul>
 		                		<li><a href="../soundcloud_api/search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
 		                		<li><a href="../soundcloud_api/upload/" title="Upload Tutorial">Upload your sound</a></li>
-		                		<li><a href="../soundcloud_api/Stream/" title="">Stream Tutorial</a></li>
-		                		<li><a href="#" title="">Track Widget Tutorial</a></li>
+		                		<li><a href="#" title="">Lorem Ipsum</a></li>
+		                		<li><a href="#" title="">Lorem Ipsum</a></li>
 	                		</ul>
 	                	</div>
 	                </li>
@@ -46,4 +69,22 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container"> 
+
+   
+<h1>Streaming with JavaScript</h1>
+<p>How to stream music from SoundCloud with JavaScript. This will have explain the simple concept on how to stream
+music from SoundCloud with basic play and stop button.</p>
+
+<h2>Example</h2>
+<p>This example will play a song from SoundCloud</p>
+
+<button id="play"> Play</button>
+<button id="stop">Stop</button>
+
+
+<h2></h2>
+        
+    
+        
+        <?php include '../views/footer.php'; ?>

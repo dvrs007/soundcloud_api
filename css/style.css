@@ -149,3 +149,9 @@ div.secondary ul {
     border: thin #ddd;
     background-color: #eee;    
 }
+
+//phil code block, code element with pre
+code, pre{
+    background:#CECECE;
+    padding: 2px 3px;
+}
