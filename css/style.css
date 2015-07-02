@@ -29,6 +29,8 @@ p {
 /* Demo applications for tutorials */
 .demo {
 	margin: 30px 0px;
+	padding: 20px;
+	border: 1px solid #eee;
 }
 
 /* ---------------------------- *\

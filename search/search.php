@@ -1,7 +1,8 @@
-<h1>Searching SoundCloud for Sounds</h1>
+<h1>Search SoundCloud with PHP</h1>
 <div class="hr"></div>
 
 <div class="demo">
+
 	<form method="post" action=".">
 
 		<label for="search">Enter your search keyword:</label>
@@ -14,11 +15,10 @@
 
 		foreach ($results_array as $r) {
 			
+			echo '<div class="search-result">';
 			echo '<p>User: ' . $r->user->username . '</p>';
 			echo '<p>Track Title: ' . $r->title . '</p>';
-			echo '<p>Date Created: ' . $r->created_at . '</p>';
-			echo '<p>Genre: ' . $r->genre . '</p>';
-			echo '<p>Tags: ' . $r->tag_list . '</p><hr>';
+			echo '<p>Genre: ' . $r->genre . '</p></div>';
 
 		}
 
@@ -27,7 +27,7 @@
 </div>
 
 <h2>Introduction</h2>
-<p>Resources such as sounds, users, sets and groups can be searched using the SoundCloud API. This tutorial will show you how to build a application which returns results based on the user's search entry. For more information about SoundCloud search, see the official documentation <a href="https://developers.soundcloud.com/docs/api/guide#search" target="_blank">here</a>.</p>
+<p>There are a couple ways to search sounds, users, sets, and groups using the SoundCloud API. This tutorial will show you two ways to do so; the first does not require user authenticaion while the second does. For more information about SoundCloud search, see the official documentation <a href="https://developers.soundcloud.com/docs/api/guide#search" target="_blank">here</a>.</p>
 
 <h2>Getting Started</h2>
 <p>In order to get this application up and running you'll need:</p>
@@ -37,7 +37,9 @@
 	<li><a href="../index.php">Register Your Application</a></li>
 </ul>
 
-<h2>1. Create a client object</h2>
+<h2>PART I: Basic Search</h2>
+
+<h3>1. Create a client object</h3>
 <p>Create a client object with your app credentials</p>
 
 <pre>
@@ -52,7 +54,7 @@
 	</code>
 </pre>
 
-<h2>2. Create form with POST request</h2>
+<h3>2. Create form with POST request</h3>
 <pre>
 	<code class="html">
 
@@ -66,7 +68,7 @@
 	</code>
 </pre>
 
-<h2>3. Generate the GET request</h2>
+<h3>3. Generate the GET request</h3>
 <pre>
 	<code class="php">
 	//if a query is posted
@@ -83,7 +85,7 @@
 	</code>
 </pre>
 
-<h2>4. Parse the Results into Array of Objects</h2>
+<h3>4. Parse the Results into Array of Objects</h3>
 <pre>
 	<code class="php">
 
@@ -94,7 +96,7 @@
 	</code>
 </pre>
 
-<h2>5. Display results in the View</h2>
+<h3>5. Display results in the View</h3>
 <pre>
 	<code class="php">
 
@@ -111,5 +113,5 @@
 	</code>
 </pre>
 
-<h2>6. Voilà!</h2>
+<h3>6. Voilà!</h3>
 <p>Your application should now be up and running.</p>
