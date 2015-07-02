@@ -34,7 +34,11 @@
 		                		<li><a href="../search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
 		                		<li><a href="../upload/index.php" title="Upload Tutorial">Upload your sound</a></li>
 		                		<li><a href="../Stream/index.php" title="">Stream Tutorial</a></li>
+<<<<<<< HEAD
 		                		<li><a href="../kaitlin/index.php" title="">Track Widget Tutorial</a></li>
+=======
+		                		<li><a href="../johnson/index.php" title="">Track Widget Tutorial</a></li>
+>>>>>>> master
 	                		</ul>
 	                	</div>
 	                </li>
