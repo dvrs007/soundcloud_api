@@ -71,55 +71,69 @@ Tutorial
 
 <p>This is where we will make two buttons, in which will have the id play and stop, we will create a function that when the buttons are clicked it will play or stop the sound.
 </p>
-<p>
+<pre>
+    <code class="html">
  < button id="play"> Play< /button>
  <br/>
  < button id="stop">Stop< /button>
-</p>
+    </code>
+</pre>
 
 <p>Now will will begin by initialize your cilent with your own client_id
 <br/>
+<pre>
+    <code class="javascript">
   SC.initialize({
     client_id: "YOUR CILENT ID"
-  });</p>
+  });
+    </code>
+</pre>
 <p>you could also put in your redirect url, but in this example we will not be using the redirect url </p>
 
-<p>We will then start to make a function that will be available when the document loads
-<br/>  $(document).ready(function() </p>
+<p>We will then start to make a function that will be available when the document loads</p>
+
+<pre>
+    <code class="javascript">
+$(document).ready(function()
+</code>
+</pre>
 
 <p>Within that function will will call the soundcloud stream SDK, this will pass through a track and then the function will have an argument name sound 
-<br/>SC.stream('/tracks/293', function(sound)
-<br/>
+
+</p>
+<pre>
+    <code class="javascript">
+SC.stream('/tracks/293', function(sound)
+   </code>
+</pre>
+<p>
 the streaming functionality is powered by soundmanager2 library, this will autoload by the SDK
 </p>
 
 
 <p>We will now create a function that whenthe buttons are clicked it will play the track.
 when the the function is click the event will prevent default which this method will not accept any arguments the argument sound will then play
-
-<br/>
+</p>
+<pre>
+    <code class="javascript">
 $('#play').click(function(e) {
-<br/>
     e.preventDefault();
-    <br/>
 
     sound.play();
-    <br/>
     }
-</p>
+    </code>
+</pre>
 
 <p>
-We will now create the function for stop
-<br/>
+We will now create the function for stop</p>
+<pre>
+    <code class="javascript">
 $('#play').click(function(e) {
-<br/>
     e.preventDefault();
-    <br/>
-
     sound.play();
-    <br/>
     }
-</p>
+    </code>
+</pre>
 
 <p>Now we close the function off, and now we can click on the buttons and it will play and stop the music stream</p>
 <h2>Example</h2>
