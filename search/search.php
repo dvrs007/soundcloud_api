@@ -227,6 +227,6 @@
 
 <h2>To view a working sample of this code, click the link below to authenticate your Soundcloud account and get started</h2>
 
-<a href="<?php echo $authorizeUrl ?>">Connect with SoundCloud</a>
+<a href="<?php echo $authorizeUrl; ?>">Connect with SoundCloud</a>
 
 <?php include '../views/footer.php'; ?>
