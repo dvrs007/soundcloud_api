@@ -37,79 +37,79 @@
 	<li><a href="../index.php">Register Your Application</a></li>
 </ul>
 
-<h2>2. Create a client object</h2>
+<h2>1. Create a client object</h2>
 <p>Create a client object with your app credentials</p>
 
 <pre>
-	<code class="html">
+	<code class="php">
 
-		require_once 'Services/Soundcloud.php';
+	require_once 'Services/Soundcloud.php';
 
-		$client = new Services_Soundcloud(
-		    'CLIENT_ID',
-		    'CLIENT_SECRET'
-		);
+	$client = new Services_Soundcloud(
+	    'CLIENT_ID',
+	    'CLIENT_SECRET'
+	);
 	</code>
 </pre>
 
-<h2>3. Create form with POST request</h2>
+<h2>2. Create form with POST request</h2>
 <pre>
 	<code class="html">
 
-		&lt;form method=&quot;post&quot; action=&quot;.&quot;&gt;
+	&lt;form method=&quot;post&quot; action=&quot;.&quot;&gt;
 
-		&lt;input type=&quot;text&quot; name=&quot;search&quot; /&gt;
-		&lt;input type=&quot;submit&quot; name=&quot;submit&quot; /&gt;
-			
-		&lt;/form&gt;
+	&lt;input type=&quot;text&quot; name=&quot;search&quot; /&gt;
+	&lt;input type=&quot;submit&quot; name=&quot;submit&quot; /&gt;
+		
+	&lt;/form&gt;
 
 	</code>
 </pre>
 
-<h2>4. Generate the GET request</h2>
+<h2>3. Generate the GET request</h2>
 <pre>
-	<code class="html">
-		//if a query is posted
-		if(isset($_POST['submit'])){
+	<code class="php">
+	//if a query is posted
+	if(isset($_POST['submit'])){
 
-			$query = $_POST['search'];
+		$query = $_POST['search'];
 
-			//url for GET request
-			$url = 'http://api.soundcloud.com/tracks';
+		//url for GET request
+		$url = 'http://api.soundcloud.com/tracks';
 
-			//find sounds with query keyword, tack onto the end of url
-			$results = $client->get($url, array('q' => $query, 'limit' => '10'));
+		//find sounds with query keyword, tack onto the end of url
+		$results = $client->get($url, array('q' => $query, 'limit' => '10'));
 		
 	</code>
 </pre>
 
-<h2>5. Parse the Results into Array of Objects</h2>
+<h2>4. Parse the Results into Array of Objects</h2>
 <pre>
-	<code class="html">
+	<code class="php">
 
-			$results_array = json_decode($results);
+		$results_array = json_decode($results);
 
-		}
+	}
 
 	</code>
 </pre>
 
-<h2>6. Display results in the View</h2>
+<h2>5. Display results in the View</h2>
 <pre>
-	<code class="html">
+	<code class="php">
 
-		foreach ($results_array as $r) {
-			
-			echo '&lt;p&gt;User: ' . $r-&gt;user-&gt;username . '&lt;/p&gt;';
-			echo '&lt;p&gt;Track Title: ' . $r-&gt;title . '&lt;/p&gt;';
-			echo '&lt;p&gt;Date Created: ' . $r-&gt;created_at . '&lt;/p&gt;';
-			echo '&lt;p&gt;Genre: ' . $r-&gt;genre . '&lt;/p&gt;';
-			echo '&lt;p&gt;Tags: ' . $r-&gt;tag_list . '&lt;/p&gt;&lt;hr&gt;';
+	foreach ($results_array as $r) {
+		
+		echo '&lt;p&gt;User: ' . $r-&gt;user-&gt;username . '&lt;/p&gt;';
+		echo '&lt;p&gt;Track Title: ' . $r-&gt;title . '&lt;/p&gt;';
+		echo '&lt;p&gt;Date Created: ' . $r-&gt;created_at . '&lt;/p&gt;';
+		echo '&lt;p&gt;Genre: ' . $r-&gt;genre . '&lt;/p&gt;';
+		echo '&lt;p&gt;Tags: ' . $r-&gt;tag_list . '&lt;/p&gt;&lt;hr&gt;';
 
-		}
+	}
 
 	</code>
 </pre>
 
-<h2>7. Voilà!</h2>
+<h2>6. Voilà!</h2>
 <p>Your application should now be up and running.</p>

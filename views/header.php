@@ -6,7 +6,6 @@
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="../css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css/styles/atelier-cave.light.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <!-- jQuery -->
@@ -14,10 +13,9 @@
 
         <!-- SoundCloud API -->
         <script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
-        <script src="/soundcloud_api/js/gen_script.js"></script>
 
         <!-- Script Highlighting -->
-        <script src="/soundcloud_api/js/highlight.js"></script>
+        <script src="/soundcloud_api/js/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
     </head>
