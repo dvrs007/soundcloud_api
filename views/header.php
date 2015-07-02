@@ -31,10 +31,10 @@
 	                <li class="tutorials"><i class="fa fa-caret-down"></i> API Tutorials
 	                	<div class="secondary">
 	                		<ul>
-		                		<li><a href="../soundcloud_api/search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
-		                		<li><a href="../soundcloud_api/upload/" title="Upload Tutorial">Upload your sound</a></li>
-		                		<li><a href="../soundcloud_api/Stream/" title="">Stream Tutorial</a></li>
-		                		<li><a href="#" title="">Track Widget Tutorial</a></li>
+		                		<li><a href="../search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
+		                		<li><a href="../upload/index.php" title="Upload Tutorial">Upload your sound</a></li>
+		                		<li><a href="../Stream/index.php" title="">Stream Tutorial</a></li>
+		                		<li><a href="../johnson/index.php" title="">Track Widget Tutorial</a></li>
 	                		</ul>
 	                	</div>
 	                </li>
