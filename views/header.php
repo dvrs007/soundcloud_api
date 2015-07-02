@@ -25,7 +25,7 @@
         <div id="navbar">
             <nav>
             	<div class="home-btn">
-					<a href="../index.php"><i class="fa fa-home"></i></a>
+					<a href="../home/index.php"><i class="fa fa-home"></i></a>
 				</div>
             	<ul>
 	                <li class="tutorials"><i class="fa fa-caret-down"></i> API Tutorials
@@ -34,11 +34,8 @@
 		                		<li><a href="../search/index.php" title="Search Tutorial">Search SoundCloud</a></li>
 		                		<li><a href="../upload/index.php" title="Upload Tutorial">Upload your sound</a></li>
 		                		<li><a href="../Stream/index.php" title="">Stream Tutorial</a></li>
-<<<<<<< HEAD
 		                		<li><a href="../johnson/index.php" title="">Track Widget Tutorial</a></li>
-=======
-		                		<li><a href="../johnson/index.php" title="">Track Widget Tutorial</a></li
->>>>>>> gen
+
 	                		</ul>
 	                	</div>
 	                </li>

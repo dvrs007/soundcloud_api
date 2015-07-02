@@ -1,8 +1,4 @@
-<?php 
-
-include 'views/header.php'; 
-
-?>
+<?php include '../views/header.php'; ?>
 
 <h1>Introduction to the SoundCloud API</h1>
 <div class="hr"></div>
@@ -21,10 +17,10 @@ You need to enter "Title", "Website", and "Redirect URI" of your app. Please kee
 
 <h1>Examples</h1>
 <ul>
-    <li><a href="phil/phil.php"><h2>Search with PHP</h2></a></li>
-    <li><a href="upload/index.php"><h2>Upload with PHP</h2></a></li>
-    <li><a href="Stream/index.php"><h2>Streaming with JavaScript</h2></a></li>
-    <li><a href=""><h2>Play track widget</h2></a></li>
+    <li><a href="../search/index.php"><h3>Search for Sounds with PHP</h3></a></li>
+    <li><a href="../upload/index.php"><h3>Upload Sounds with PHP</h3></a></li>
+    <li><a href="../Stream/index.php"><h3>Streaming Sounds with JavaScript</h3></a></li>
+    <li><a href="../johnson/index.php"><h3>Play Widget</h3></a></li>
 </ul>
 
-<?php include 'views/footer.php'; ?>
+<?php include '../views/footer.php'; ?>
