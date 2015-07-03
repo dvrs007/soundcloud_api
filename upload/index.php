@@ -8,15 +8,15 @@ include '../views/header.php';
 <br/>
 You are assumed to have an account with SoundCloud and register for the key and the token.
 <br/>
-(1)Download the PHP Wrapper from <a href="https://github.com/mptre/php-soundcloud" target="_blank"></a>HERE (Github repository).<br/>
+(1)Download the PHP Wrapper from <a href="https://github.com/mptre/php-soundcloud" target="_blank">HERE</a> (Github repository).<br/>
 Click "Download ZIP" on the page above.<br/>
 What you need is the "Services" folder with all files in it.<br/>
 Place the "Services" folder in the folder that you are working on.<br/><br/>
 (2)Please have the following lines of code on top of your code.<br/>
-<div class="code_block">
+<code class="php">
     require_once 'Services/Soundcloud.php';<br/>
     require_once 'sc_credentials.php';
-</div>
+</code>
 sc_credentials.php includes your app information such as <br/>
 Client ID, Client Secret, and Redirect URI.<br/>
 The information that you set when you register for your app with SoundCloud.<br/>
@@ -25,46 +25,50 @@ The information that you set when you register for your app with SoundCloud.<br/
 Then, all set.Now let's start coding.<br/>
 First thing is to create an object to conduct the available method in the PHP wrapper.
 
-<div class='code_block'>$sc_connection = new Services_Soundcloud(
-    CLIENT_ID, CLIENT_SECRET, CALL_BACK_URI);</div>
+<code class="php">
+    $sc_connection = new Services_Soundcloud(
+    CLIENT_ID, CLIENT_SECRET, CALL_BACK_URI);
+</code>
 
 <br/>
 Then,generate the token for your user with the following link.
-<div class='code_block'>
+<code class="php">
     $authURL = $sc_connection->getAuthorizeUrl();
     echo '<a href="' . $authURL . '">Connect to SoundCloud</a>';
-</div>
+</code>
 <br/>When your user clicks the  link, one would get the token to use your app, here, to upload one's sound file.<br/>
 
 <br/>
 Next, store the access token.<br/>
-<div class='code_block'>
+<code class="php">
     $accessToken = $sc_connection->accessToken($_GET['code'], array(), array(
     CURLOPT_SSL_VERIFYPEER => false,
     CURLOPT_SSL_VERIFYHOST => false,
     ));
-</div>
+</code>
 <br/>
 Now, let's get the user's information through '/me' end point. The reference for this resource end point is available <a href="https://developers.soundcloud.com/docs/api/reference#me" target="_blank">HERE</a>.
-<div class='code_block'>$me = json_decode($sc_connection->get('me'), true);</div>
+<code class="php">
+    $me = json_decode($sc_connection->get('me'), true);
+</code>
 
 <br/>
 Finally, your user can get one's profile information by the following lines.<br/>
-<div class='code_block'>
+<code class="php">
     $user_data = array(<br/>
     'id' => $me['id'],<br/>
     'username' => $me['username'],<br/>
     'name' => $me['full_name'],<br/>.
     'avatar' => $me['avatar_url']<br/>
     );
-</div>
+</code>
 <br/>
 So, the above is for logging into the SoundCloud.<br/>
 
 <br/>
 Next is the form to upload a file into the Soundcloud account.<br/>
 The zip files are available to download or you can see the DEMO.<br/>
-<a href='../jeesoo/sc_uploading.zip'>Zip files to download</a>
+<a href='../jeesoo/sc_uploading.zip'>Zip files to download</a><br/>
 <a href="../jeesoo/" target="_blank">DEMO</a>
 
 <br/><br/>
@@ -77,13 +81,6 @@ The zip file includes three files of index.php, upload.php, and sc_credentials.p
 
 </p>
 <br/>
-
-
-
-<p><h2>Tutorial for Uploading your comments, etc.</h2>
-<a href="">DEMO</a>
-</p>
-
 
 
 <?php
