@@ -1,13 +1,15 @@
 <?php
 
-require_once '../sc_credentials.php';
+//require_once '../sc_credentials.php';
 require_once '../php-soundcloud-master/Services/Soundcloud.php';
 
 //create a client object with your app credentials
 $client = new Services_Soundcloud(
-    'CLIENT_ID',
-    'CLIENT_SECRET',
-    'REDIRECT_URI'
+    // 'CLIENT_ID',
+    // 'CLIENT_SECRET',
+    // 'REDIRECT_URI'
+
+    '4a562b1152ae828060d7bfbe66343599', '393b582e4316c78a7e1b5c7196e2badc', 'http://soundcloudapi.philipjamesdevries.com/phil/authorize.php'
 );
 
 //redirect user to authorize URL

@@ -6,7 +6,9 @@
 
 ?>
 
-<h2>Play Widget with oEmbed</h2>
+<h1>Play Widget with oEmbed</h1>
+<div class="hr"></div>
+
 <p>In this tutorial, we will be using the SoundCloud play widget to stream tracks from a designated author. You can also play sounds from your application. Depending on your needs, you can embed a player widget, see the official documentation <a href="https://developers.soundcloud.com/docs/api/guide#playing" target="_blank">here</a>.</p>
 
 <h2>Getting Started</h2>
@@ -14,49 +16,47 @@
 <ul>
 	<li>PHP 5 or higher</li>
 	<li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API wrapper</a></li>
-	<li><a href="../index.php">Register Your Application</a></li>
+	<li><a href="../home/index.php">Register Your Application</a></li>
         <li><a href="https://developers.soundcloud.com/docs/api/guide#playing">Embedding the SoundCloud Widget</a></li>
 </ul>
 
-<h2>Information on Embedding a SoundCloud Widget</h2>
 <p>If you have the URL of a sound or set, you can get the embed code and paste it into your website. Given a sound or set URL, you can retrieve all of the information you need to embed a player.</p>
 
-<h2>Before proceeding further, ensure that your application is authenticated. In the following example, the user connect upon clicking on the "Connect to SoundCloud" button.</h2>
+<p><strong>Before proceeding further, ensure that your application is authenticated. In the following example, the user connect upon clicking on the "Connect to SoundCloud" button.</strong></p>
 
-
-<h2>1. Enter the track url you want to showcase or play to your users</h2>
+<h3>1. Enter the track url you want to showcase or play to your users</h3>
 <pre>
-	<code class="html">
-		// get a tracks oembed data
-                $track_url = 'http://soundcloud.com/forss/flickermood';
+	<code class="php">
+	//get a tracks oembed data
+    	$track_url = 'http://soundcloud.com/forss/flickermood';
 	</code>
 </pre>
 
-<h2>2. Enter the variable previously set for the track url into a json_decode method</h2>
+<h3>2. Enter the variable previously set for the track url into a json_decode method</h3>
 <pre>
-	<code class="html">
-		try {
-                $embed_info = json_decode($client->get('oembed', array('url' => $track_url)));
+	<code class="php">
+	try {
+	        $embed_info = json_decode($client->get('oembed', array('url' => $track_url)));
 
-                } catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
-                    exit($e->getMessage());
-                }
+	        } catch (Services_Soundcloud_Invalid_Http_Response_Code_Exception $e) {
+	            exit($e->getMessage());
+	        }
 	</code>
 </pre>
 
-<h2>3. Display information based on the track</h2>
+<h3>3. Display information based on the track</h3>
 <pre>
-	<code class="html">
-                echo '&lt;p&gt;Track Title: ' . $embed_info-&gt;-&gt;title . '&lt;/p&gt;';
-                echo '&lt;p&gt;Author: ' . $embed_info-&gt;author_name . '&lt;/p&gt;';
-                echo '&lt;p&gt;Description: ' . $embed_info-&gt;description . '&lt;/p&gt;';
+	<code class="php">
+	    echo '&lt;p&gt;Track Title: ' . $embed_info-&gt;-&gt;title . '&lt;/p&gt;';
+	    echo '&lt;p&gt;Author: ' . $embed_info-&gt;author_name . '&lt;/p&gt;';
+	    echo '&lt;p&gt;Description: ' . $embed_info-&gt;description . '&lt;/p&gt;';
 	</code>
 </pre>
 
-<h2>4. Render the html for the player widget</h2>
+<h3>4. Render the html for the player widget</h3>
 <pre>
-	<code class="html">
-                print $embed_info->html;
+	<code class="php">
+    	print $embed_info->html;
 	</code>
 </pre>
 
