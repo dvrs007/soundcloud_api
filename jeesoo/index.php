@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 
 //require the PHP Wrapper with soundcloud credentials
 //credentials are created when the your application is registered with SoundCloud API
-require_once '../Services/Soundcloud.php';
+require_once '../php-soundcloud-master/Services/Soundcloud.php';
 require_once 'sc_credentials.php';
 
 include '../views/header.php';
@@ -20,7 +19,6 @@ $sc_connection = new Services_Soundcloud(
 //FALSE: 'production' => 'soundcloud.com'
 $sc_connection->setDevelopment(false);
 //********************************************************************//
-
 //Generate a URL used for authorization and prompt your user to visit your newly generated URL
 //developer's object will create URL for authorizing users.
 $authURL = $sc_connection->getAuthorizeUrl();
