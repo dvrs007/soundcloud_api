@@ -9,9 +9,9 @@
 <h2>Getting Started</h2>
 <p>In order to get this application up and running you'll need:</p>
 <ul>
-	<li>PHP 5 or higher</li>
-	<li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API wrapper</a></li>
-	<li><a href="../home/index.php">Register Your Application</a></li>
+    <li>PHP 5 or higher</li>
+    <li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API Wrapper</a></li>
+    <li><a href="../home/index.php">Register Your Application</a></li>
 </ul>
 
 <h2>PART I: Basic Search</h2>

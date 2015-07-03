@@ -26,6 +26,12 @@ p {
 	margin: 100px auto;
 }
 
+footer {
+	background: #eee;
+	text-align: center;
+	padding: 10px;
+}
+
 /* Demo applications for tutorials */
 .demo {
 	margin: 30px 0px;
