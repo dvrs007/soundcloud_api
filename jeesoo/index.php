@@ -4,7 +4,7 @@ session_start();
 //require the PHP Wrapper with soundcloud credentials
 //credentials are created when the your application is registered with SoundCloud API
 require_once '../php-soundcloud-master/Services/Soundcloud.php';
-require_once 'sc_credentials.php';
+require_once 'upload_credentials.php';
 
 include '../views/header.php';
 
