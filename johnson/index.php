@@ -1,3 +1,11 @@
+<?php 
+
+	require_once 'Services/Soundcloud.php';
+	require_once '../jt_credentials.php';
+	include '../views/header.php';
+
+?>
+
 <h2>Play Widget with oEmbed</h2>
 <p>In this tutorial, we will be using the SoundCloud play widget to stream tracks from a designated author. You can also play sounds from your application. Depending on your needs, you can embed a player widget, see the official documentation <a href="https://developers.soundcloud.com/docs/api/guide#playing" target="_blank">here</a>.</p>
 
@@ -51,16 +59,12 @@
                 print $embed_info->html;
 	</code>
 </pre>
+
 <?php
-
-require_once 'Services/Soundcloud.php';
-require_once 'sc_credentials.php';
-include 'views/header.php';
-
 
 // create client object with app credentials
 $client = new Services_Soundcloud(
-  $clientID, $clientSecret, 'http://johnsonta.ca/soundcloud/');
+  $clientID, $clientSecret, 'http://johnsonta.ca/soundcloud/johnson/');
 
 //Generate a URL used for authorization and prompt your user to visit your newly generated URL
 $authURL= $client->getAuthorizeUrl();
@@ -115,4 +119,4 @@ $embed_info = json_decode($client->get('oembed', array('url' => $track_url)));
 // render the html for the player widget
 print $embed_info->html;
 
-
+include '../views/footer.php';

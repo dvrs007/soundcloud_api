@@ -1,15 +1,19 @@
 <?php
 
-include '../views/header.php';
 require_once '../sc_credentials.php';
-require_once '../Services/Soundcloud.php';
+require_once '../php-soundcloud-master/Services/Soundcloud.php';
 
 //create a client object with your app credentials
 $client = new Services_Soundcloud(
     'CLIENT_ID',
-    'CLIENT_SECRET'
+    'CLIENT_SECRET',
+    'REDIRECT_URI'
 );
 
+//redirect user to authorize URL
+$authorizeUrl = $client->getAuthorizeUrl();
+
+//variables
 $query='';
 $results_array=[];
 
@@ -24,8 +28,7 @@ if(isset($_POST['submit'])){
 	//find sounds with query keyword, tack onto the end of url
 	$results = $client->get($url, array(
 		'q' => $query,
-		//'order' => 'created_at', 
-		'limit' => '5'
+		'limit' => '3'
 	));
 
 	$results_array = json_decode($results);
