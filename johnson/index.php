@@ -1,7 +1,7 @@
 <?php 
 
 	require_once 'Services/Soundcloud.php';
-	require_once '../sc_credentials.php';
+	require_once '../jt_credentials.php';
 	include '../views/header.php';
 
 ?>
