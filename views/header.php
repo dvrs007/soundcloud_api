@@ -15,7 +15,7 @@
         <script src="//connect.soundcloud.com/sdk.js"></script>
 
         <!-- Script Highlighting -->
-        <script src="/soundcloud_api/js/highlight.pack.js"></script>
+        <script src="../js/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
     </head>
