@@ -9,15 +9,15 @@
 <h2>Getting Started</h2>
 <p>In order to get this application up and running you'll need:</p>
 <ul>
-	<li>PHP 5 or higher</li>
-	<li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API wrapper</a></li>
-	<li><a href="../home/index.php">Register Your Application</a></li>
+    <li>PHP 5 or higher</li>
+    <li><a href="https://github.com/mptre/ci-soundcloud" target="_blank">SoundCloud PHP API Wrapper</a></li>
+    <li><a href="../home/index.php">Register Your Application</a></li>
 </ul>
 
 <h2>PART I: Basic Search</h2>
 
 <div class="demo">
-<h3>DEMO</h3>
+<h3>DEMO | <a href="basic-search-code.zip">DOWNLOAD ZIP FILE</a></h3>
 	<form method="post" action=".">
 
 		<label for="search">Enter your search keyword:</label>
@@ -34,7 +34,7 @@
 			
 			echo '<div class="search-result">';
 			echo '<p>User: ' . $r->user->username . '</p>';
-			echo '<p>Track Title: ' . $r->title . '</p>';
+			echo '<p><a href="' . $r->permalink_url . '" target="_blank">Track Title: ' . $r->title . '</a></p>';
 			echo '<p>Genre: ' . $r->genre . '</p></div>';
 
 		}
@@ -44,7 +44,7 @@
 </div>
 
 <h3>1. Create a client object</h3>
-<p>After requiring the SoundCloud class from the API wrapper package, either directly on the page or in your controller, you can create a client object with your app credentials like so:</p>
+<p>After downloading the PHP API Wrapper from GitHub, place the "Services" folder inside your project folder. We need to reference the SoundCloud class inside this folder, create a client object with your app credentials like so:</p>
 
 <pre>
 	<code class="php">
@@ -58,8 +58,8 @@
 	</code>
 </pre>
 
-<h3>2. Create form with POST request</h3>
-<p>This form will post your search request to the server and return the SoundCloud results.</p>
+<h3>2. Create a form with POST request</h3>
+<p>We need to create a form will post your search request to the query to the API and return the SoundCloud results.</p>
 
 <pre>
 	<code class="html">
@@ -75,21 +75,22 @@
 </pre>
 
 <h3>3. Generate the GET request</h3>
-<p>If the submit button is clicked, the value of the input field. We can construct a URL that will get the information from SoundCloud based on the query keyword</p>
+<p>When the submit button is clicked, we use the $_POST superglobal array to pass the query string into the get request for the API.</p>
 
-<p>In this case, we're performing a general search for anything that matches the query string. You can restrict search results by assigning more filters, like duration and record label to name a few. See the <a href="https://developers.soundcloud.com/docs/api/reference#tracks" target="_blank">API documentation</a> for more filtering options.</p>
+<p>In the code below, we use the 'q' filter which is a filter that looks for anything that matches the query string. You can restrict search results by assigning more filters, like duration and record label. See the <a href="https://developers.soundcloud.com/docs/api/reference#tracks" target="_blank">API documentation</a> for more filtering options.</p>
 
 <pre>
 	<code class="php">
 	//if a query is posted
 	if(isset($_POST['submit'])){
 
+		//get the query value
 		$query = $_POST['search'];
 
 		//url for GET request
 		$url = 'http://api.soundcloud.com/tracks';
 
-		//find sounds that match query string, limit results to 10
+		//create full get request with URL, find sounds that match query string, limit results to 10
 		$results = $client->get($url, array('q' => $query, 'limit' => '10'));
 		
 	</code>
@@ -110,7 +111,7 @@
 </pre>
 
 <h3>5. Display results in the View</h3>
-<p></p>
+<p>This can be done using a <code>foreach</code> loop. We can then target the properties we want to display.</p>
 
 <pre>
 	<code class="php">
@@ -131,14 +132,14 @@
 <h3>6. Voilà!</h3>
 <p>Your application should now be up and running.</p>
 
-<h2>PART II: Search with OAuth</h2>
+<h2>PART II: Search featuring OAuth</h2>
+<p>The downside to performing a search request as we did in the above tutorial is that some information is inaccessible to non-SoundCloud users. Certain searchable properties require, in other words, authentication in order to access. In this tutorial we'll show you how to retrieve search results as an authenticated user.</p>
 
 <h3>1. Create a new instance of your client</h3>
-<p>We'll start by requiring the Soundcloud class (which you can download  from GitHub <a href="https://github.com/mptre/php-soundcloud">here</a>), then creating a new instance of our client info. Once the code matches the tokens from the query string, we are ready to search with the API</p>
+<p>Start by requiring the Soundcloud class like in the first tutorial, then create a new instance of our client info. Once the code matches the tokens from the query string, we are ready to search with the API</p>
 
 <pre>
 	<code>
-
 	require_once 'php-soundcloud-master/Services/Soundcloud.php';
 
 	// create client object with app credentials
@@ -155,7 +156,6 @@
 	// make an authenticated call
 	$current_user = json_decode($client->get('me'));
 	$scUser = $current_user->username;
-
 	</code>
 </pre>
 
@@ -193,7 +193,7 @@
     </code>
 </pre>
 
-<p>...and there you go. You've just searched Soundcloud using the API with PHP</p>
+<p>...and there you go. You've just searched Soundcloud using the API with PHP!</p>
 <p>Here's the complete script with authentication required:</p>
 
 <pre>
@@ -226,11 +226,11 @@
 
 	foreach($decodedtracks as $s){
 	    $track_url = $s->permalink_url;
-	    echo "Track url: " . $track_url . "<br>";
+	    echo "Track url: " . $track_url . "&lt;br&gt;";
 
 	    $embed_info = json_decode($client->get('oembed', array('url' => $track_url)));
 
-	// render the html for the player widget
+	//render the html for the player widget
 	print $embed_info->html;
 
      
@@ -238,8 +238,8 @@
 	</code>
 </pre>
 
-<h2>To view a working sample of this code, click the link below to authenticate your Soundcloud account and get started</h2>
+<p><strong>DEMO</strong>: <a href="<?php echo $authorizeUrl; ?>">Connect with SoundCloud</a></p>
+<p><a href="oauth-search.zip">DOWNLOAD ZIP FILES</a></p>
 
-<a href="<?php echo $authorizeUrl; ?>">Connect with SoundCloud</a>
 
 <?php include '../views/footer.php'; ?>
