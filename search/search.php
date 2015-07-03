@@ -17,7 +17,7 @@
 <h2>PART I: Basic Search</h2>
 
 <div class="demo">
-<h3>DEMO</h3>
+<h3>DEMO | <a href="basic-search-code.zip">DOWNLOAD ZIP FILE</a></h3>
 	<form method="post" action=".">
 
 		<label for="search">Enter your search keyword:</label>
@@ -75,9 +75,9 @@
 </pre>
 
 <h3>3. Generate the GET request</h3>
-<p>If the submit button is clicked, the value of the input field. We can construct a URL that will get the information from SoundCloud based on the query keyword</p>
+<p>When the submit button is clicked, we use the $_POST superglobal array to pass the query string into the get request for the API.</p>
 
-<p>In this case, we're performing a general search for anything that matches the query string. You can restrict search results by assigning more filters, like duration and record label to name a few. See the <a href="https://developers.soundcloud.com/docs/api/reference#tracks" target="_blank">API documentation</a> for more filtering options.</p>
+<p>In the code below, we use the 'q' filter which is a filter that looks for anything that matches the query string. You can restrict search results by assigning more filters, like duration and record label. See the <a href="https://developers.soundcloud.com/docs/api/reference#tracks" target="_blank">API documentation</a> for more filtering options.</p>
 
 <pre>
 	<code class="php">
@@ -131,7 +131,7 @@
 <h3>6. Voilà!</h3>
 <p>Your application should now be up and running.</p>
 
-<h2>PART II: Search with OAuth</h2>
+<h2>PART II: Search featuring OAuth</h2>
 
 <h3>1. Create a new instance of your client</h3>
 <p>We'll start by requiring the Soundcloud class (which you can download  from GitHub <a href="https://github.com/mptre/php-soundcloud">here</a>), then creating a new instance of our client info. Once the code matches the tokens from the query string, we are ready to search with the API</p>
