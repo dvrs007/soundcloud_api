@@ -57,16 +57,10 @@ include "../views/header.php";
 </script>
 
    
-<h1>Streaming with JavaScript</h1>
+<h1>Streaming Sounds with JavaScript</h1>
 <div class="hr"></div>
 
-<div>
-  <p>How to stream music from SoundCloud with JavaScript. This will have explain the simple concept on how to stream
-  music from SoundCloud with basic play and stop button.</p>
-</div>
-
-<h2>Tutorial</h2>
-<div class="hr"></div>
+<p>How to stream music from SoundCloud with JavaScript. This will have explain the simple concept on how to stream music from SoundCloud with basic play and stop button.</p>
 
 <p>This is where we will make two buttons, in which will have the id play and stop, we will create a function that when the buttons are clicked it will play or stop the sound.
 </p>
@@ -138,19 +132,14 @@ We will now create the function for stop</p>
   </code>
 </pre>
 
-<p>Now we close the function off, and now we can click on the buttons and it will play and stop the music stream</p>
+<p>Now we close the function off, and now we can click on the buttons and it will play and stop the music stream.</p>
 
 
-<h2>Example</h2>
-<div class="hr"></div>
+<strong>DEMO</strong>
 
 <button id="play"> Play</button>
 <button id="stop">Stop</button>
 
-
-<h2>Download</h2>
-<div class="hr"></div>
-<p>You can download the documentation here.</p>
-<p><a href="streamjavascript.zip">Download</a></p>
+<p><a href="streamjavascript.zip">DOWNLOAD ZIP FILES</a></strong></p>
         
 <?php include '../views/footer.php'; ?>

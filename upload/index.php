@@ -80,7 +80,7 @@ include '../views/header.php';
 <p>So, the above is for logging into the SoundCloud.</p>
 
 <p>Next is the form to upload a file into the Soundcloud account. The zip files are available to download or you can see the DEMO.</p>
-<p><a href="../jeesoo/" target="_blank">DEMO</a> | <a href='../jeesoo/sc_uploading.zip'>DOWNLOAD ZIP FILES</a></p>
+<p><strong><a href="../jeesoo/" target="_blank">DEMO</a> | <a href='../jeesoo/sc_uploading.zip'>DOWNLOAD ZIP FILES</a></strong></p>
 
 <p><strong>Note:</strong></p>
 <p>If you download the zip file, please change the followings for your setting. The zip file includes three files of index.php, upload.php, and sc_credentials.php</p>
